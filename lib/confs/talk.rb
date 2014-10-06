@@ -4,6 +4,8 @@ require 'ostruct'
 class Confs::Talk
   include Comparable
 
+  attr_reader :embedded
+
   def id
     slug
   end
