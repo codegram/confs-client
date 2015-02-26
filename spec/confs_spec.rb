@@ -5,37 +5,37 @@ describe Confs do
 
   describe 'speakers' do
     it 'returns the speakers list' do
-      subject.speakers.count.should eq 13
+      subject.speakers.count.should eq 15
     end
   end
 
   describe 'sponsors' do
     it 'returns the sponsors list' do
-      subject.sponsors.count.should eq 0
+      subject.sponsors.count.should eq 6
     end
   end
 
   describe 'posts' do
     it 'returns the posts list' do
-      subject.posts.count.should eq 7
+      subject.posts.count.should eq 14
     end
   end
 
   describe 'job_offers' do
     it 'returns the job offers list' do
-      subject.job_offers.count.should eq 0
+      subject.job_offers.count.should eq 3
     end
   end
 
   describe 'events' do
     it 'returns the events list' do
-      subject.events.count.should eq 24
+      subject.events.count.should eq 26
     end
   end
 
   describe 'talks' do
     it 'returns the talks list' do
-      subject.talks.count.should eq 13
+      subject.talks.count.should eq 15
     end
   end
 

@@ -12,12 +12,7 @@ module Confs
     #
     # Returns an Hyperclient.
     def self.build
-      Hyperclient.new(Confs.config.api_url).tap do |api|
-        api.digest_auth(
-          Confs.config.conference_name,
-          Confs.config.conference_token
-        )
-      end
+      Hyperclient.new(Confs.config.api_url)
     end
 
     def speakers
@@ -66,7 +61,7 @@ module Confs
     #    The api service url.
     #
     def api_url
-      @api_url || ENV.fetch( 'CONFLY_API_URL', 'http://conferences.codegram.com/api/endpoint' )
+      @api_url || ENV.fetch( 'CONFLY_API_URL', "http://conferences.codegram.com/api/#{conference_name}/endpoint" )
     end
 
     # The "conference_name" used for digest authentication.
