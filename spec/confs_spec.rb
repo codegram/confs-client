@@ -37,6 +37,10 @@ describe Confs do
     it 'returns the talks list' do
       expect(subject.talks.count).to eq 15
     end
+
+    it 'finds the related speaker' do
+      expect(subject.talks.first.embedded.speaker).not_to be_nil
+    end
   end
 
   describe 'workshops' do
