@@ -15,7 +15,8 @@ class Confs::Talk
   # resource - An Hyperclient::Resource representing an Talk.
   def initialize(resource)
     @attributes = OpenStruct.new(resource.attributes.to_hash)
-    @embedded = OpenStruct.new(resource.embedded.to_hash)
+    embedded_hash = resource.embedded.to_hash
+    @embedded = OpenStruct.new(embedded_hash.merge(speaker: embedded_hash['speakers'].first))
   end
 
   # Internal: Redirects all methods to the OpenStruct that has all the
