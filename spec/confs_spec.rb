@@ -39,7 +39,8 @@ describe Confs do
     end
 
     it 'finds the related speaker' do
-      expect(subject.talks.first.embedded.speakers).not_to be_nil
+      expect(subject.talks.first.embedded.speakers.count).to eq 1
+      expect(subject.talks.first.embedded.speaker).to be_kind_of(Hyperclient::Resource)
     end
   end
 
